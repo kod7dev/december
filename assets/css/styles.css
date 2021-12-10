@@ -11462,6 +11462,7 @@ body {
 }
 .sb-sidenav .sb-sidenav-menu .nav .nav-link .sb-nav-link-icon {
   font-size: 0.9rem;
+  width: 1rem;
 }
 .sb-sidenav .sb-sidenav-menu .nav .nav-link .sb-sidenav-collapse-arrow {
   display: inline-block;
