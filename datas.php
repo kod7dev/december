@@ -1,10 +1,11 @@
 <?php
 
 require  __DIR__ . '/helpers/helpers.php';
+require  __DIR__ . '/config/config.php';
 
 session_start();
 if (!sessionControl($_SESSION)) {
-    header('Location:login.php');
+    header('Location:' . SITE_URL . 'login.php');
     exit;
 }
 
@@ -54,7 +55,7 @@ require __DIR__ . '/components/header.php';
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form id="uploadForm" action="/controllers/file_upload.php" method="post" enctype="multipart/form-data">
+                            <form id="uploadForm" action="<?php echo SITE_URL ?>controllers/file_upload.php" method="post" enctype="multipart/form-data">
                                 <div>
                                     <label for="formFileLg" class="form-label">Yüklenecek dosyayı seçin:</label>
                                     <input class="form-control form-control-lg" id="formFileLg" type="file" name="file">
@@ -79,8 +80,8 @@ require __DIR__ . '/components/header.php';
                             <li class="list-group-item list-group-item-action  d-flex justify-content-between align-items-start">
                                 <?php echo $file; ?>
                                 <div class="">
-                                    <a class="badge bg-danger link-light" href="/controllers/del_data_file.php?file=<?php echo $file; ?>">Sil</a>
-                                    <a class="badge bg-success link-light" href="/datas.php?file=<?php echo $file; ?>">Göster</a>
+                                    <a class="badge bg-danger link-light" href="<?php echo SITE_URL ?>controllers/del_data_file.php?file=<?php echo $file; ?>">Sil</a>
+                                    <a class="badge bg-success link-light" href="<?php echo SITE_URL ?>datas.php?file=<?php echo $file; ?>">Göster</a>
                                 </div>
                             </li>
                         <?php } ?>

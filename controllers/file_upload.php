@@ -1,5 +1,6 @@
 <?php
 session_start();
+require __DIR__ . '/../config/config.php';
 
 $target_dir = "./../uploads/";
 $target_file = $target_dir . basename($_FILES["file"]["name"]);
@@ -22,5 +23,5 @@ if ($uploadOk == 0) {
 }
 
 
-header('Location:/datas.php');
+header('Location:' . SITE_URL . 'datas.php');
 exit;

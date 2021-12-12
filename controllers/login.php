@@ -2,7 +2,6 @@
 require __DIR__ . '/../config/db.php';
 session_start();
 
-
 // db bağlantısı yap
 // kullanıcı - şifre eşleştirmesi yap
 // oturumu başlat
@@ -24,15 +23,15 @@ if (isset($_POST['loginForm']) && !empty($_POST['email']) && !empty($_POST['pass
         $_SESSION['login'] = true;
         $_SESSION['userId'] = $result[0]['id'];
 
-        header('Location:/index.php');
+        header('Location:' . SITE_URL . 'index.php');
         exit;
     } else {
         $_SESSION["error_login"][] = "Kullanıcı email adı ya da şifre yanlış";
 
-        header('Location:/login.php');
+        header('Location:' . SITE_URL . 'login.php');
         exit;
     }
 }
 
-header('Location:/login.php');
+header('Location:' . SITE_URL . 'login.php');
 exit;

@@ -5,7 +5,7 @@ require  __DIR__ . '/helpers/helpers.php';
 require __DIR__ . '/config/db.php';
 
 if (!sessionControl($_SESSION)) {
-    header('Location:login.php');
+    header('Location:' . SITE_URL . 'login.php');
     exit;
 }
 
@@ -34,7 +34,7 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form id="uploadForm" action="/controllers/add_agent.php" method="post" enctype="multipart/form-data">
+                            <form id="uploadForm" action="<?php echo SITE_URL ?>controllers/add_agent.php" method="post" enctype="multipart/form-data">
                                 <div class="mb-3">
                                     <label for="formFileLg" class="form-label">Agents Resmi</label>
                                     <input class="form-control form-control-lg" id="formFileLg" type="file" name="agentImage">
@@ -103,15 +103,15 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <div class="col-md-3 mb-4">
                     <div class="card shadow border-0">
                         <div class="card-header bg-white border-0 p-4 border-bottom border-lisht">
-                            <img src="/assets/img/users/<?php echo $item['image'] == "no-image.png" ? "no-image.png" : $item['image']?>" class="rounded-pill img-fluid" alt="...">
+                            <img src="<?php echo SITE_URL ?>assets/img/users/<?php echo $item['image'] == "no-image.png" ? "no-image.png" : $item['image'] ?>" class="rounded-pill img-fluid" alt="...">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title mt-2"><strong>İSİM:</strong> <?php echo $item['name'] ?></h5>
                             <span class="text-lead subtitle"><strong>NUMARA:</strong> <?php echo $item['number'] ?></span>
                             <p class="card-text"><strong>MAİL:</strong> <?php echo $item['email'] ?></p>
-                            <a href="controllers/del_agent.php?agent_id=<?php echo $item['id'] ?>&image=<?php echo $item['image'] ?>" class="link-danger">Sil</a>
+                            <a href="<?php echo SITE_URL ?>controllers/del_agent.php?agent_id=<?php echo $item['id'] ?>&image=<?php echo $item['image'] ?>" class="link-danger">Sil</a>
                             <span class="px-1"></span>
-                            <a href="/edit_agent.php?agent_id=<?php echo $item['id'] ?>" class="link-primary">Düzenle</a>
+                            <a href="<?php echo SITE_URL ?>edit_agent.php?agent_id=<?php echo $item['id'] ?>" class="link-primary">Düzenle</a>
                         </div>
                     </div>
                 </div>

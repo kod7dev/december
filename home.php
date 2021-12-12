@@ -4,7 +4,7 @@ require  __DIR__ . '/helpers/helpers.php';
 
 session_start();
 if (!sessionControl($_SESSION)) {
-    header('Location:login.php');
+    header('Location:' . SITE_URL . 'login.php');
     exit;
 }
 
@@ -21,14 +21,15 @@ require __DIR__ . '/components/header.php';
             <div class="col-xl-3 col-md-6">
                 <div class="card bg-info text-white mb-4">
                     <div class="card-header">
-                        <a class="small text-white stretched-link" href="/datas.php">Datas</a>
+                        <a class="small text-white stretched-link" href="<?php echo SITE_URL ?>datas.php">Datas</a>
                         <i class="fas fa-angle-right"></i>
                     </div>
                 </div>
-            </div><div class="col-xl-3 col-md-6">
+            </div>
+            <div class="col-xl-3 col-md-6">
                 <div class="card bg-secondary text-white mb-4">
                     <div class="card-header">
-                        <a class="small text-white stretched-link" href="/agents.php">Agents</a>
+                        <a class="small text-white stretched-link" href="<?php echo SITE_URL ?>agents.php">Agents</a>
                         <i class="fas fa-angle-right"></i>
                     </div>
                 </div>

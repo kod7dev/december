@@ -45,12 +45,12 @@ if (
         ":userId" => $_POST['agentId']
     ]);
 
-    header('Location:/agents.php');
+    header('Location:' . SITE_URL . 'agents.php');
 
     exit;
 } else {
     $_SESSION["error_agents"][] = "Kullanıcı güncelleme işi başarısız oldu.";
 }
 
-header('Location:/agents.php');
+header('Location:' . SITE_URL . 'agents.php');
 exit;

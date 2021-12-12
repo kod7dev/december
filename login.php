@@ -6,7 +6,7 @@ require  __DIR__ . '/helpers/helpers.php';
 session_start();
 
 if (sessionControl($_SESSION)) {
-    header('Location:index.php');
+    header('Location:' . SITE_URL . 'index.php');
     exit;
 }
 
@@ -22,7 +22,7 @@ if (sessionControl($_SESSION)) {
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Giriş - <?php echo TITLE; ?></title>
-    <link href="/assets/css/styles.css" rel="stylesheet" />
+    <link href="<?php echo SITE_URL ?>assets/css/styles.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
 </head>
 
@@ -51,7 +51,7 @@ if (sessionControl($_SESSION)) {
                                     }
 
                                     ?>
-                                    <form action="/controllers/login.php" method="post">
+                                    <form action="<?php echo SITE_URL ?>controllers/login.php" method="post">
                                         <div class="form-floating mb-3">
                                             <input class="form-control" id="inputEmail" type="email" name="email" placeholder="Email"/>
                                             <label for="inputEmail">Email Adresi</label>

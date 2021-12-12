@@ -3,25 +3,25 @@
         <div class="sb-sidenav-menu">
             <div class="nav">
                 <div class="sb-sidenav-menu-heading">Sayfalar</div>
-                <a class="nav-link" href="/index.php">
+                <a class="nav-link" href="<?php echo SITE_URL ?>index.php">
                     <div class="sb-nav-link-icon">
                         <i class="fas fa-home"></i>
                     </div>
                     Ana Sayfa
                 </a>
-                <a class="nav-link" href="/agents.php">
+                <a class="nav-link" href="<?php echo SITE_URL ?>agents.php">
                     <div class="sb-nav-link-icon">
                         <i class="fas fa-users"></i>
                     </div>
                     Agents
                 </a>
-                <a class="nav-link" href="/datas.php">
+                <a class="nav-link" href="<?php echo SITE_URL ?>datas.php">
                     <div class="sb-nav-link-icon">
                         <i class="fas fa-database"></i>
                     </div>
                     Veriler
                 </a>
-                <a class="nav-link" href="/settings.php">
+                <a class="nav-link" href="<?php echo SITE_URL ?>settings.php">
                     <div class="sb-nav-link-icon">
                         <i class="fas fa-cog"></i>
                     </div>

@@ -16,15 +16,15 @@ if (isset($_GET["agent_id"])) {
             unlink(__DIR__ . "/../assets/img/users/" . $_GET["image"]);
         }
 
-        header('Location:/agents.php');
+        header('Location:' . SITE_URL . 'agents.php');
         exit;
     } else {
         $_SESSION["error_agents"][] = "Agent silmede bir hata oluştu";
 
-        header('Location:/agents.php');
+        header('Location:' . SITE_URL . 'agents.php');
         exit;
     }
 }
 
-header('Location:/agents.php');
+header('Location:' . SITE_URL . 'agents.php');
 exit;

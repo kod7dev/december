@@ -5,14 +5,14 @@ require  __DIR__ . '/helpers/helpers.php';
 require __DIR__ . '/config/db.php';
 
 if (!sessionControl($_SESSION)) {
-    header('Location:login.php');
+    header('Location:' . SITE_URL . 'login.php');
     exit;
 }
 
 require __DIR__ . '/components/header.php';
 
 if (!$_GET['agent_id']) {
-    header('Location:/agents.php');
+    header('Location:' . SITE_URL . 'agents.php');
     exit;
 } else {
 
@@ -33,10 +33,10 @@ if (!$_GET['agent_id']) {
         <div class="my-3">
             <div class="card mx-auto" style="max-width: 400px ">
                 <div class="card-header bg-white border-0 p-4 border-bottom border-lisht">
-                    <img src="/assets/img/users/<?php echo $result[0]['image'] == "no-image.png" ? "no-image.png" : $result[0]['image']?>" class="rounded-pill img-fluid" alt="...">
+                    <img src="<?php echo SITE_URL ?>assets/img/users/<?php echo $result[0]['image'] == "no-image.png" ? "no-image.png" : $result[0]['image']?>" class="rounded-pill img-fluid" alt="...">
                 </div>
                 <div class="card-body">
-                    <form action="/controllers/edit_agent.php" method="post" enctype="multipart/form-data">
+                    <form action="<?php echo SITE_URL ?>controllers/edit_agent.php" method="post" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label for="formFileLg" class="form-label">Agents Resmi</label>
                             <input class="form-control form-control-lg" id="formFileLg" type="file" name="agentImageNew">
@@ -66,7 +66,7 @@ if (!$_GET['agent_id']) {
                             </label>
                         </div>
                         <hr class="my-3">
-                        <a href="/agents.php" class="btn btn-secondary">Vazgeç</a>
+                        <a href="<?php echo SITE_URL?>agents.php" class="btn btn-secondary">Vazgeç</a>
                         <button type="submit" name="agentEdit" class="btn btn-primary">Güncelle</button>
                     </form>
                 </div>

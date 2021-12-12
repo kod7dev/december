@@ -49,12 +49,12 @@ if (
 
     agentsAddDB($userData);
 
-    header('Location:/agents.php');
+    header('Location:' . SITE_URL . 'agents.php');
 
     exit;
 } else {
     $_SESSION["error_agents"][] = "Kullanıcı ekleme işi başarısız oldu. Eksik alan girmeyiniz.";
 }
 
-header('Location:/agents.php');
+header('Location:' . SITE_URL . 'agents.php');
 exit;

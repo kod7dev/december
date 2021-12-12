@@ -15,5 +15,5 @@ if (isset($_POST['userUpdateForm']) && !empty($_POST['email']) && !empty($_POST[
     $_SESSION["error_user_update"][] = "Kullanıcı email adı ya da şifre boş olmamalı";
 }
 
-header('Location:/settings.php');
+header('Location:' . SITE_URL . 'settings.php');
 exit;

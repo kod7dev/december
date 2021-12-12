@@ -6,7 +6,7 @@ require __DIR__ . '/config/db.php';
 require __DIR__ . '/components/header.php';
 
 if (!sessionControl($_SESSION)) {
-    header('Location:login.php');
+    header('Location:' . SITE_URL . 'login.php');
     exit;
 }
 
@@ -54,7 +54,7 @@ $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 }
                 ?>
 
-                <form action="/controllers/user_update.php" method="post">
+                <form action="<?php echo SITE_URL ?>controllers/user_update.php" method="post">
                     <div class="mb-3">
                         <label for="username" class="form-label">Kullanıcı eMail</label>
                         <input id="username" name="email" type="text" class="form-control" value="<?php echo $result[0]['email'] ?>" require>
