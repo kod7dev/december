@@ -20,27 +20,27 @@ require __DIR__ . '/components/header.php';
 
         <?php
         // dosya yüklemede hata olursa ekrana oluşan hatayı batırır
-        if (isset($_SESSION["error_file_upload"])) {
+        if (isset($_SESSION["error_data_upload"])) {
         ?>
             <div class="alert alert-danger">
-                <?php foreach ($_SESSION["error_file_upload"] as $msg) {
+                <?php foreach ($_SESSION["error_data_upload"] as $msg) {
                     echo $msg . "<br>";
                 } ?>
             </div>
         <?php
-            unset($_SESSION["error_file_upload"]);
+            unset($_SESSION["error_data_upload"]);
         }
 
         //// dosya yüklemenin başarılı olduğu zaman ekrana alert basar
-        if (isset($_SESSION["succuess_file_upload"])) {
+        if (isset($_SESSION["succuess_data_upload"])) {
         ?>
             <div class="alert alert-success">
-                <?php foreach ($_SESSION["succuess_file_upload"] as $msg) {
+                <?php foreach ($_SESSION["succuess_data_upload"] as $msg) {
                     echo $msg . "<br>";
                 } ?>
             </div>
         <?php
-            unset($_SESSION["succuess_file_upload"]);
+            unset($_SESSION["succuess_data_upload"]);
         }
         ?>
 
