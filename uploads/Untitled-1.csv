@@ -1,0 +1,22 @@
+SIP/OS4000-00009a1b!macro-dialoutrec!s!34!Up!Dial!SIP/05332703474@SOLTrunk,60,tTS()!3000!!!3!8!SIP/SOLTrunk-00009a1d!1638440696.39775
+SIP/OS4000-00009a1a!!6313!1!Ringing!AppDial!(Outgoing Line)!+2323986313!!!3!11!(None)!1638440693.39774
+SIP/OS4000-00009a1e!!7779!1!Ringing!AppDial!(Outgoing Line)!+2323987779!!!3!8!(None)!1638440696.39778
+SIP/SOLTrunk-00009a1d!!!1!Up!AppDial!(Outgoing Line)!905332703474!!!3!8!SIP/OS4000-00009a1b!1638440696.39777
+SIP/SolBayrakli-00009a17!!!1!Up!AppDial!(Outgoing Line)!6602322904656!!!3!25!SIP/BAYRAKLIITSP-00009a16!1638440679.39771
+SIP/SOLTrunk-00009a18!karsilama!80001!19!Up!BackGround!custom/yeni-HESKODU-KentAnaAnons1-2-3-!05334791380!karsilama-80001!!3!14!(None)!1638440690.39772
+SIP/SOLTrunk-00009a13!randevu!82000!19!Up!BackGround!custom/KoronaVirus-Kent-SesKayit-Kvkk-Bilgi!05437320969!randevu-82000!!3!33!(None)!1638440671.39767
+SIP/SOLTrunk-00009a06!default!8702!8!Up!Queue!callcenter,t,,,7200,,ccsocket!05345493184!operator-0!!3!62!(None)!1638440642.39754
+SIP/SOLTrunk-00009a01!default!8702!8!Up!Queue!callcenter,t,,,7200,,ccsocket!05351035363!randevu-82000!randevu-82000!3!90!SIP/elk-8711-ext-00009a0b!1638440615.39749
+SIP/elk-8712-ext-00009a12!default!8702!1!Up!AppQueue!(Outgoing Line)!8712!operator-0!operator-0!3!36!SIP/SOLTrunk-000099fb!1638440668.39766
+SIP/elk-8712-ext-00009a19!macro-vm!s!44!Ring!Dial!SIP/6313@OS4000,30,tTwW!8712!!!3!12!(None)!1638440693.39773
+SIP/BAYRAKLIITSP-00009a16!default!6602322904656!3!Up!Dial!SIP/02322904656@SolBayrakli,60,1,0!02325707103!!!3!25!SIP/SolBayrakli-00009a17!1638440679.39770
+SIP/SOLTrunk-000099eb!default!8702!8!Up!Queue!callcenter,t,,,7200,,ccsocket!05417861938!operator-0!operator-0!3!143!SIP/elk-8718-ext-00009a04!1638440561.39727
+SIP/SOLTrunk-000099e9!default!8789!7!Up!Queue!Onkoloji,tr,,,60!05395242283!onkoloji-83000!onkoloji-83000!3!156!SIP/OS4000-000099fe!1638440548.39725
+SIP/SOLTrunk-000099d8!default!8702!8!Up!Queue!callcenter,t,,,7200,,ccsocket!05345186474!randevu-82000!randevu-82000!3!241!SIP/elk-8725-ext-000099e5!1638440463.39708
+SIP/elk-8725-ext-000099e5!default!8702!1!Up!AppQueue!(Outgoing Line)!8725!randevu-82000!randevu-82000!3!188!SIP/SOLTrunk-000099d8!1638440516.39721
+SIP/SOLTrunk-000099fb!default!8702!8!Up!Queue!callcenter,t,,,7200,,ccsocket!05393148426!operator-0!operator-0!3!98!SIP/elk-8712-ext-00009a12!1638440606.39743
+SIP/elk-8718-ext-00009a04!default!8702!1!Up!AppQueue!(Outgoing Line)!8718!operator-0!operator-0!3!81!SIP/SOLTrunk-000099eb!1638440623.39752
+SIP/elk-8718-ext-00009a1c!macro-vm!s!44!Ring!Dial!SIP/7779@OS4000,30,tTwW!8718!!!3!8!(None)!1638440696.39776
+SIP/elk-8711-ext-00009a0b!default!8702!1!Up!AppQueue!(Outgoing Line)!8711!randevu-82000!randevu-82000!3!50!SIP/SOLTrunk-00009a01!1638440654.39759
+SIP/elk-8717-ext-00009a1f!default!8702!1!Down!AppQueue!(Outgoing Line)!8717!!!3!0!(None)!1638440705.39779
+SIP/OS4000-000099fe!!8789!1!Up!AppQueue!(Outgoing Line)!+2323987762!onkoloji-83000!onkoloji-83000!3!95!SIP/SOLTrunk-000099e9!1638440609.39746

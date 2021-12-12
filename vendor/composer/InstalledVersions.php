@@ -25,24 +25,33 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => '76a477828f85ea18d1f62a799865e24013e25696',
     'name' => '__root__',
   ),
   'versions' => 
   array (
     '__root__' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => '76a477828f85ea18d1f62a799865e24013e25696',
+    ),
+    'league/csv' => 
+    array (
+      'pretty_version' => '9.7.4',
+      'version' => '9.7.4.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '002f55f649e7511710dc7154ff44c7be32c8195c',
     ),
     'symfony/password-hasher' => 
     array (

@@ -9,11 +9,11 @@
                     </div>
                     Ana Sayfa
                 </a>
-                <a class="nav-link" href="/users.php">
+                <a class="nav-link" href="/agents.php">
                     <div class="sb-nav-link-icon">
                         <i class="fas fa-users"></i>
                     </div>
-                    Kullanıcılar
+                    Agents
                 </a>
                 <a class="nav-link" href="/datas.php">
                     <div class="sb-nav-link-icon">
@@ -31,7 +31,7 @@
         </div>
         <div class="sb-sidenav-footer">
             <div class="small">Giriş yapan kullanıcı</div>
-            <strong><?php echo $_SESSION['username'] ?></strong>
+            <strong><?php echo $_SESSION['user'] ?></strong>
         </div>
     </nav>
 </div>

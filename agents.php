@@ -1,22 +1,123 @@
 <?php
+session_start();
 
 require  __DIR__ . '/helpers/helpers.php';
+require __DIR__ . '/config/db.php';
 
-session_start();
 if (!sessionControl($_SESSION)) {
     header('Location:login.php');
     exit;
-} 
+}
 
 require __DIR__ . '/components/header.php';
+
+$stmt = $db->prepare("select * from agents");
+$stmt->execute();
+
+$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 <main>
-    <div class="container-fluid px-4">
-        <h1 class="mt-4">Kullanıcılar</h1>
-        <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item active">Kayıtlı Kullanıcılar</li>
+    <div class="container mx-auto px-4">
+        <h1 class="mt-4">Agents</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">Kayıtlı Agents</li>
         </ol>
+        <div class="my-3">
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-plus-circle"></i> Agents Ekle</button>
+            <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Yeni Agents</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="uploadForm" action="/controllers/add_agent.php" method="post" enctype="multipart/form-data">
+                                <div class="mb-3">
+                                    <label for="formFileLg" class="form-label">Agents Resmi</label>
+                                    <input class="form-control form-control-lg" id="formFileLg" type="file" name="agentImage">
+                                    <span>(Kare formatında olması tavsiye edilir. 200x200, 450x450) </span>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">Agents Adı</label>
+                                    <input required id="username" name="agentName" type="text" class="form-control" value="">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">Agents Numara</label>
+                                    <input required id="username" name="agentNumber" type="number" class="form-control" value="">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">Agents Şifre</label>
+                                    <input required id="username" name="agentPassword" type="number" class="form-control" value="">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">Agents Email</label>
+                                    <input required id="username" name="agentEmail" type="email" class="form-control" value="">
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" name="agentPopup" type="checkbox" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        Popup Yetkisi
+                                    </label>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Vazgeç</button>
+                            <button type="submit" form="uploadForm" name="agentAdd" class="btn btn-primary">Yükle</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <?php
+            if (isset($_SESSION["error_agents"])) {
+            ?>
+                <div class="alert alert-danger">
+                    <?php foreach ($_SESSION["error_agents"] as $msg) {
+                        echo $msg . "<br>";
+                    } ?>
+                </div>
+            <?php
+                unset($_SESSION["error_agents"]);
+            }
+
+            if (isset($_SESSION["success_agents"])) {
+            ?>
+                <div class="alert alert-success">
+                    <?php foreach ($_SESSION["success_agents"] as $msg) {
+                        echo $msg . "<br>";
+                    } ?>
+                </div>
+            <?php
+                unset($_SESSION["success_agents"]);
+            }
+            ?>
+        </div>
+        <div class="row">
+            <?php
+            foreach ($result as $item) : ?>
+                <div class="col-md-3 mb-4">
+                    <div class="card shadow border-0">
+                        <div class="card-header bg-white border-0 p-4 border-bottom border-lisht">
+                            <img src="/assets/img/users/<?php echo $item['image'] == "no-image.png" ? "no-image.png" : $item['image']?>" class="rounded-pill img-fluid" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title mt-2"><strong>İSİM:</strong> <?php echo $item['name'] ?></h5>
+                            <span class="text-lead subtitle"><strong>NUMARA:</strong> <?php echo $item['number'] ?></span>
+                            <p class="card-text"><strong>MAİL:</strong> <?php echo $item['email'] ?></p>
+                            <a href="controllers/del_agent.php?agent_id=<?php echo $item['id'] ?>&image=<?php echo $item['image'] ?>" class="link-danger">Sil</a>
+                            <span class="px-1"></span>
+                            <a href="/edit_agent.php?agent_id=<?php echo $item['id'] ?>" class="link-primary">Düzenle</a>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+        <?php /*
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
@@ -505,6 +606,7 @@ require __DIR__ . '/components/header.php';
                 </table>
             </div>
         </div>
+        */ ?>
     </div>
 </main>
 
