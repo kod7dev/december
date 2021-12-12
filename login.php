@@ -61,7 +61,6 @@ if (sessionControl($_SESSION)) {
                                             <label for="inputPassword">Şifre</label>
                                         </div>
                                         <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                            <a class="small" href="password.php">Şifremi unuttum!</a>
                                             <button type="submit" class="btn btn-primary" name="loginForm">Giriş</button>
                                         </div>
                                     </form>
