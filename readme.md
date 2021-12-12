@@ -1,5 +1,13 @@
 # Notlar
 
+## Projedeki Özellikler
+
+- PHP ile CRUD işlemleri yapar
+- Dosya Okuma/Yazma
+- Composer kullanma
+- CSV dosyası parçalama
+- Kullanıcı giriş/çıkış - session yönetimi
+
 ## Projeyi Çalıştırmak İçin
 
 - `december` adında bir veri tabanı oluşturun. 
